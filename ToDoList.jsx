@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   },
   taskText: {
     fontSize: 16,
+    color: 'black',
   },
 });
 

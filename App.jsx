@@ -12,22 +12,25 @@ import {
 } from 'react-native';
 import ToDoForm from './ToDoForm';
 
-import { useState } from 'react';
+import {useState} from 'react';
 
 function App() {
+  const addTask = (taskText) => {
+    setTasks([...tasks, taskText]);
+  };
 
   const taskList = [
     {name: 'Do laundry', key: '1'},
     {name: 'Go to gym', key: '2'},
-    {name: 'Walk dog', key:'3'}
+    {name: 'Walk dog', key: '3'},
   ];
 
-  const [tasks,setTasks] = useState(taskList);
+  const [tasks, setTasks] = useState(taskList);
 
   return (
     <SafeAreaView>
-      <ToDoList tasks={tasks}/>
-      <ToDoForm />
+      <ToDoList tasks={tasks} />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 }
